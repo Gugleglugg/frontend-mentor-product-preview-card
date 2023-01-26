@@ -1,0 +1,115 @@
+:root {
+    --accent-color: hsl(158, 36%, 37%);
+    --container-bg: hsl(30, 38%, 92%);
+    --card-bg: hsl(0, 0%, 100%);
+    --hover-color: hsl(156, 42%, 18%);
+    --heading-color: hsl(212, 21%, 14%);
+    --category-color: hsl(228, 12%, 48%);
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background-color: var(--container-bg);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card {
+    background-color: var(--card-bg);
+    max-width: 90vw;
+    margin: 1.5rem;
+    padding: 0;
+    display: flex;
+    
+    gap: 1.5em;
+    flex-direction: column;
+    
+}   
+
+.no-margin {
+    margin: 0;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    width: 100%;
+}
+
+.card-text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 501px) {
+    .card {
+        flex-direction: row;    
+        
+    }
+
+    .card * {
+        flex: 1;
+    }
+
+    .card-text {
+        margin-top: 1.5rem;
+    }
+
+    .desktop-only {
+        display: block;
+        width: 100%;
+        }
+
+    .mobile-only {
+        display: none;
+    }
+
+    
+}
+
+
+
+
+.current-price {
+    font-family: "Fraunces", serif;
+    color: var(--accent-color);
+    font-size: xx-large;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--category-color);
+}
+
+.card h2 {
+    font-family: "Fraunces", serif;
+    color: var(--heading-color);
+}
+
+
+button {
+    background-color: var(--accent-color);
+}
+
+
+.attribution {
+     font-size: 11px; text-align: center;
+ }
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
