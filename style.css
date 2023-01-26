@@ -22,6 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     
 }
 
@@ -31,9 +32,10 @@ body {
     margin: 1.5rem;
     padding: 0;
     display: flex;
-    
-    gap: 1.5em;
+    border-radius: 1em;
+    gap: 0;
     flex-direction: column;
+    
     
 }   
 
@@ -47,17 +49,17 @@ body {
 
 .mobile-only {
     width: 100%;
+    border-radius: 1em 1em 0 0;
 }
 
 .card-text {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem;
 }
 
-@media (min-width: 501px) {
+@media (min-width: 650px) {
     .card {
-        flex-direction: row;    
+        flex-direction: row;
+        max-width: 600px;   
         
     }
 
@@ -66,12 +68,19 @@ body {
     }
 
     .card-text {
+        max-width: calc(300px - 1.5rem);
         margin-top: 1.5rem;
+        margin-left: 0;
+        padding-left: 1.5rem
     }
 
     .desktop-only {
         display: block;
         width: 100%;
+        height: 100%;
+        border-radius: 1em 0 0 1em;
+        flex-shrink: 0;
+        
         }
 
     .mobile-only {
@@ -82,27 +91,63 @@ body {
 }
 
 
-
+.category-name {
+    text-transform: uppercase;
+    font-size: smaller;
+    letter-spacing: 0.1em;
+}
 
 .current-price {
     font-family: "Fraunces", serif;
     color: var(--accent-color);
     font-size: xx-large;
+    font-weight: 700;
 }
 
 .old-price {
     text-decoration: line-through;
     color: var(--category-color);
+    position: relative;
+    bottom: 0.5em;
+    margin-left: 1em;
+    
 }
 
 .card h2 {
     font-family: "Fraunces", serif;
     color: var(--heading-color);
+    font-size: xx-large;
 }
 
+.card p {
+    font-size: 14px;
+    line-height: 2em;
+    letter-spacing: 0.05em;
+}
+
+.button-icon {
+    flex-grow: 0;
+}
 
 button {
     background-color: var(--accent-color);
+    border-radius: 0.5em;
+    border-color: transparent;
+    padding: 1em;
+    width: 100%;
+    color: var(--container-bg);
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    max-height: 3em;
+    margin-top: 1em;
+}
+
+button:hover {
+    background-color: var(--hover-color);
 }
 
 
